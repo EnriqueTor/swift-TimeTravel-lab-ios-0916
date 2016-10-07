@@ -2,33 +2,31 @@
 
 ![](http://i.imgur.com/VnpPsFO.jpg)
 
-Your mission, should you choose to accept it, is to build an iOS app that simulates space travel.
+Your mission.. should you choose to accept it is to build an iOS app that simulates space travel.
 
-These instructions won't be structured in a "do this, then this" format. We're going to make this more like the realz worldz (not that show on MTV).
+These instructions won't be structured in a do this, do this next format. We're going to make this more like the realz worldz (not that show on MTV).
 
 It's your choice how you organize your files.
 
-Create an enum called `Speed` where its raw value is of type `Double`. The various cases and their respective raw values are as follows:
+Create an enum called `Speed` where it's Raw Value is of type `Double`. The Various cases and their respective raw values are as follows:
 
 * none = 0
 * slow = 50
 * medium = 150
-* fast = 1_000
-* lightSpeed = 1_000_000
+* fast = 1000
+* lightSpeed = 1000000
 
-Create an `init` function for this `Speed` enum where the name of the first argument in the `init` function is `spaceSpeed` of type `Double`. I recommend `switch`ing on the `spaceSpeed` parameter where the various cases represent ranges. 
-**Hint:** We want to assign a value to `self` within these various cases (the value being an instance of the enum).
+Create an `init` function for this `Speed` enum where the name of the first argument in the `init` function is `spaceSpeed` of type `Double`. I recommend `switch`ing on the `spaceSpeed` parameter where the various cases represent rages. Hint: We want to assign a value to `self` within these various cases (the value being an instance of the enum).
 
-* If speed is 0, the case should be `.none`
-* If speed falls between 1 -> 149, `.slow`
-* If speed falls between 150 -> 999, `.medium`
-* If speed falls between 1_000 -> 999_999, `.fast`
-* The default case should be `.lightspeed`
+* if speed falls between 0 -> 49, it should be `.none`
+* if speed falls between 50 -> 149, `.slow`
+* if speed falls between 150 -> 999, `.medium`
+* if speed falls between 1000 -> 999999, `.fast`
+* default case should be `.lightspeed`
 
-Create a read-only computed property of type `Bool`. It returns `true` if `self` is traveling at `.lightSpeed`. Every other case should return `false`.
+Create a read-only computed property of type `Bool`. It returns `true` if `self` is traveling at `.lightSpeed`, every other case should return `false`.
 
-Create a function called `isFaster(than:)` which takes in one parameter named `speed` of type `Speed` which returns a `Bool`. It should check to see if `self` (current instance of the `Speed` enum which would be calling on this function) is faster than the `Speed` instance passed into this function as an argument. 
-**Hint:** `rawValue`.
+Create a function called `isFaster(than:)` which takes in one parameter named `speed` of type `Speed` which returns a `Bool`. It should check to see if `self` (current instance of the `Speed` enum which would be calling on this function) is faster than the `Speed` instance passed into this function as an argument. Hint: `rawValue`.
 
 ---
 
@@ -76,39 +74,9 @@ It should have the following read-only computed property:
 
 The `init` function should take in a `name` and `planet` and assign those values to the stored properties.
 
-Create a function called `timeTravel()` which returns back a `Bool`. If the speed of the ship is traveling at lightSpeed then it should return `true`.
-**Hint:** Call on the canTimeTravel computed property on speed.
+Create a function called `timeTravel()` which returns back a `Bool`. If the speed of the ship is travling at lightSpeed (hint: call on the camTimeTravel computed property on speed) then it should return `true`.
 
-Create a function called `isFaster(than:)` which takes in one argument called `spaceShip` of type `Spaceship`. It should return back a `Bool`. If the speed of your ship is going faster than the ship passed in as an argument, it should return `true`.
-
-Create a function called `travel(to:)` which takes in one argument called `planet` of type `Planet` and it should return back a `Bool`. Depending on where you're going and at what speed determines whether or not you can travel to the planet. As well as determining whether or not you can travel to the planet, you're `currentPlanet` stored property should be set to equal the `planet` argument being passed in if you ultimately will return `true`.
-
-If you're ship is currently on `mercury` than you can't travel anywhere. You should return `false`, you're too close to the sun. Your ship is now broken.
-
-You should adhere to the following conditions, in order to travel to planet you need to be at the speed listed next to the planet:
-
-* `venus` - `.fast`
-* `earth` - `.fast`
-* `mars` - `.lightSpeed`
-* `jupiter` - `.slow`
-* `saturn` - `.medium`
-* `uranus` - `.slow`
-* `neptune` - `.fast`
-
-If you make an attempt to fly to `neptune` and you're going `.lightSpeed` you're `currentPlanet` should become `mars` and you should return `false`.
-
-If you're attempting to fly to `venus` and you're moving at `lightSpeed`, you're `currentPlanet` should also become `mars` and you should return `false`.
-
---- 
-
-## Advanced - UI
-
-Create the User Interface of this app in the `main.storyboard` file and `ViewController.swift` file. 
-
-How you design the UI is up to you. But I like the idea of there being text at the top of the screen which lets the user know what the spaceships current planet is. There should be buttons in the middle of the screen all lined up which represent the difference speeds we can set our spaceship to. Below those buttons there should be buttons representing all the different planets. When one of those planets are tapped we should determine whether or not we should be able to travel to the planet. If so, our current planet updates and you should then update the current planet label.
-
-If you want to get crazy! Based upon the weather at whatever your current planet is, you should update the background to represent what that weather might be. (Up to you!).
-
+Create a function called `isFaster(than:)` which takes in one argument.
 
 
 <a href='https://learn.co/lessons/TimeTravelLab' data-visibility='hidden'>View this lesson on Learn.co</a>
